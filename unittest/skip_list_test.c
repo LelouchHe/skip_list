@@ -29,12 +29,10 @@ int main() {
         msl_set(sl, kv_infos[i].k, kv_infos[i].v);
     }
 
-    /*
     for (i = 0; i < kv_num; i++) {
         const char *v = (const char *)msl_get(sl, kv_infos[i].k);
         printf("key: %s\tvalue: %s\n", kv_infos[i].k, v == NULL ? "(null)" : v);
     }
-    */
 
     msl_erase(sl, "0");
     msl_erase(sl, "7");
