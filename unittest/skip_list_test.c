@@ -29,6 +29,7 @@ int main() {
         msl_set(sl, kv_infos[i].k, kv_infos[i].v);
     }
 
+    printf("get\n");
     for (i = 0; i < kv_num; i++) {
         const char *v = (const char *)msl_get(sl, kv_infos[i].k);
         printf("key: %s\tvalue: %s\n", kv_infos[i].k, v == NULL ? "(null)" : v);
@@ -39,6 +40,7 @@ int main() {
     msl_erase(sl, "6");
     msl_erase(sl, "10");
 
+    printf("iter\n");
     struct skip_list_iter_t it = msl_iter_next(sl, NULL);
     while (it.v != NULL) {
         const char *k = msl_iter_getk(&it);
