@@ -39,6 +39,7 @@ int main() {
     msl_erase(sl, "0");
     msl_erase(sl, "7");
     msl_erase(sl, "6");
+    msl_erase(sl, "10");
 
     struct skip_list_iter_t it = msl_iter_next(sl, NULL);
     while (it.v != NULL) {
